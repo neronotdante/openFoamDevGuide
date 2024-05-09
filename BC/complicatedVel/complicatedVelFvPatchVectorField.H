@@ -116,6 +116,8 @@ class complicatedVelFvPatchVectorField
         //- Boolean for true/false, e.g. specify if flow rate is volumetric_
         bool boolData_;
 
+        this->patch().Cf()
+
 
     // Private Member Functions
 

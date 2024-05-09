@@ -1,0 +1,21 @@
+wmakeLnInclude: linking include files to ./lnInclude
+Making dependency list for source file complicatedVelFvPatchVectorField.C
+g++ -std=c++14 -m64 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -O3  -DNoRepository -ftemplate-depth-100 -I/opt/openfoam10/src/finiteVolume/lnInclude -I/opt/openfoam10/src/meshTools/lnInclude -IlnInclude -I. -I/opt/openfoam10/src/OpenFOAM/lnInclude -I/opt/openfoam10/src/OSspecific/POSIX/lnInclude   -fPIC -c complicatedVelFvPatchVectorField.C -o Make/linux64GccDPInt32Opt/complicatedVelFvPatchVectorField.o
+In file included from complicatedVelFvPatchVectorField.C:26:
+complicatedVelFvPatchVectorField.H:119:9: error: expected unqualified-id before ‘this’
+  119 |         this-
+      |         ^~~~
+complicatedVelFvPatchVectorField.C:34:14: error: no declaration matches ‘Foam::scalar Foam::complicatedVelFvPatchVectorField::t() const’
+   34 | Foam::scalar Foam::complicatedVelFvPatchVectorField::t() const
+      |              ^~~~
+complicatedVelFvPatchVectorField.C:34:14: note: no functions named ‘Foam::scalar Foam::complicatedVelFvPatchVectorField::t() const’
+In file included from complicatedVelFvPatchVectorField.C:26:
+complicatedVelFvPatchVectorField.H:90:7: note: ‘class Foam::complicatedVelFvPatchVectorField’ defined here
+   90 | class complicatedVelFvPatchVectorField
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+complicatedVelFvPatchVectorField.C: In member function ‘virtual void Foam::complicatedVelFvPatchVectorField::updateCoeffs()’:
+complicatedVelFvPatchVectorField.C:182:40: error: ‘t’ was not declared in this scope; did you mean ‘tm’?
+  182 |       + scalarData_*timeVsData_->value(t())
+      |                                        ^
+      |                                        tm
+make: *** [/opt/openfoam10/wmake/rules/General/transform:26: Make/linux64GccDPInt32Opt/complicatedVelFvPatchVectorField.o] Error 1
