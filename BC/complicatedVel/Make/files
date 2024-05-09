@@ -1,0 +1,3 @@
+complicatedVelFvPatchVectorField.C
+
+LIB = $(FOAM_USER_LIBBIN)/libcomplicatedVel
