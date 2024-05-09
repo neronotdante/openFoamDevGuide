@@ -1,5 +1,7 @@
 *this is a temp guide for how to create a new boundary class, I shall replace this guide to obsdian note later.*
+# foamNewBC
 
+## use `foamNewBC` to create a BC class 
 You could use  `foamNewBC -help`to get help from openfoam.
 ```
 ...
@@ -74,3 +76,30 @@ blockMesh
 testBoundaryFoam
 ```
 
+## some infomation about the boundary condition class 
+
+The declaration of the boundary condition class is in the .H file. 
+
+### private data and private member function
+
+`scalar scalarData_`
+We could see all private data has been defined in the 0/U file. When the solver is running, Openfoam will read the data from dict file and assosiate the data from dict file to the private data by Boundary condition class's constructor function.
+
+`scalar t() const`
+
+This private function is help us to get the time value when runtime looping. The function return scalar type value, so it's easy to manipulate the time value with the other scalar value as we need.
+
+### constructor function
+
+`timeDependentVelocityFvPatchVectorField()`
+
+There are several constructor functions in this class. we don't need pay too mucn attention to the constructor function. We should only know that when we create a new boundary condition class, we should define the constructor function in the .C file like the template do.
+
+### public member function
+
+`virtual void updateCoeffs();`
+
+
+*updateCoeffs() Update the coefficients associated with the patch field*
+
+you could see the specific implementation of the time-dependent boundary condition in the related .c file. Remember to call the `fixedValueFvPatchVectorField::updateCoeffs()` function in the .c file.
