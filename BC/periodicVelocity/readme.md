@@ -77,5 +77,24 @@ wmake libso
 ```
 
 change the 0/U file
+```
+    inlet
+    {
+        type       periodicVelocity;
+        V0       (0 0 0);
+        Vp       (1 0 0);
+    }
+```
 
-add libso
+add libso to system/controlDict
+```
+libs
+(
+    "libperiodicVelocity.so"
+);
+```
+
+run test solver
+```
+testBoundaryFoam
+```
