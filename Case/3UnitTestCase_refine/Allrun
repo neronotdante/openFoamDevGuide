@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Source tutorial run functions
+foamCleanCase
+
+blockMesh
+
+
+#------------------------------------------------------------------------------
