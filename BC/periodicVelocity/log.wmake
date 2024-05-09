@@ -1,0 +1,179 @@
+wmakeLnInclude: linking include files to ./lnInclude
+Making dependency list for source file periodicVelocityFvPatchVectorField.C
+g++ -std=c++14 -m64 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -Wno-attributes -O3  -DNoRepository -ftemplate-depth-100 -I/opt/openfoam10/src/finiteVolume/lnInclude -I/opt/openfoam10/src/meshTools/lnInclude -IlnInclude -I. -I/opt/openfoam10/src/OpenFOAM/lnInclude -I/opt/openfoam10/src/OSspecific/POSIX/lnInclude   -fPIC -c periodicVelocityFvPatchVectorField.C -o Make/linux64GccDPInt32Opt/periodicVelocityFvPatchVectorField.o
+periodicVelocityFvPatchVectorField.C: In constructor ‘Foam::periodicVelocityFvPatchVectorField::periodicVelocityFvPatchVectorField(const Foam::fvPatch&, const Foam::DimensionedField<Foam::Vector<double>, Foam::volMesh>&)’:
+periodicVelocityFvPatchVectorField.C:50:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘scalarData_’
+   50 |     scalarData_(0.0),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:51:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘data_’
+   51 |     data_(Zero),
+      |     ^~~~~
+periodicVelocityFvPatchVectorField.C:52:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘fieldData_’
+   52 |     fieldData_(p.size(), Zero),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:53:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘timeVsData_’
+   53 |     timeVsData_(),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:54:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘wordData_’
+   54 |     wordData_("wordDefault"),
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:55:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘labelData_’
+   55 |     labelData_(-1),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:56:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘boolData_’
+   56 |     boolData_(false)
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In constructor ‘Foam::periodicVelocityFvPatchVectorField::periodicVelocityFvPatchVectorField(const Foam::fvPatch&, const Foam::DimensionedField<Foam::Vector<double>, Foam::volMesh>&, const Foam::dictionary&)’:
+periodicVelocityFvPatchVectorField.C:70:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘scalarData_’
+   70 |     scalarData_(dict.lookup<scalar>("scalarData")),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:71:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘data_’
+   71 |     data_(dict.lookup<vector>("data")),
+      |     ^~~~~
+periodicVelocityFvPatchVectorField.C:72:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘fieldData_’
+   72 |     fieldData_("fieldData", dict, p.size()),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:73:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘timeVsData_’
+   73 |     timeVsData_(Function1<vector>::New("timeVsData", dict)),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:74:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘wordData_’
+   74 |     wordData_(dict.lookupOrDefault<word>("wordName", "wordDefault")),
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:75:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘labelData_’
+   75 |     labelData_(-1),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:76:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘boolData_’
+   76 |     boolData_(false)
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In constructor ‘Foam::periodicVelocityFvPatchVectorField::periodicVelocityFvPatchVectorField(const Foam::periodicVelocityFvPatchVectorField&, const Foam::fvPatch&, const Foam::DimensionedField<Foam::Vector<double>, Foam::volMesh>&, const Foam::fvPatchFieldMapper&)’:
+periodicVelocityFvPatchVectorField.C:102:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘scalarData_’
+  102 |     scalarData_(ptf.scalarData_),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:102:21: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘scalarData_’
+  102 |     scalarData_(ptf.scalarData_),
+      |                     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:103:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘data_’
+  103 |     data_(ptf.data_),
+      |     ^~~~~
+periodicVelocityFvPatchVectorField.C:103:15: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘data_’; did you mean ‘data’?
+  103 |     data_(ptf.data_),
+      |               ^~~~~
+      |               data
+periodicVelocityFvPatchVectorField.C:104:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘fieldData_’
+  104 |     fieldData_(mapper(ptf.fieldData_)),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:104:27: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘fieldData_’
+  104 |     fieldData_(mapper(ptf.fieldData_)),
+      |                           ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:105:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘timeVsData_’
+  105 |     timeVsData_(ptf.timeVsData_, false),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:105:21: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘timeVsData_’
+  105 |     timeVsData_(ptf.timeVsData_, false),
+      |                     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:106:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘wordData_’
+  106 |     wordData_(ptf.wordData_),
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:106:19: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘wordData_’
+  106 |     wordData_(ptf.wordData_),
+      |                   ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:107:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘labelData_’
+  107 |     labelData_(-1),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:108:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘boolData_’
+  108 |     boolData_(ptf.boolData_)
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:108:19: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘boolData_’
+  108 |     boolData_(ptf.boolData_)
+      |                   ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In constructor ‘Foam::periodicVelocityFvPatchVectorField::periodicVelocityFvPatchVectorField(const Foam::periodicVelocityFvPatchVectorField&, const Foam::DimensionedField<Foam::Vector<double>, Foam::volMesh>&)’:
+periodicVelocityFvPatchVectorField.C:120:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘scalarData_’
+  120 |     scalarData_(ptf.scalarData_),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:120:21: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘scalarData_’
+  120 |     scalarData_(ptf.scalarData_),
+      |                     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:121:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘data_’
+  121 |     data_(ptf.data_),
+      |     ^~~~~
+periodicVelocityFvPatchVectorField.C:121:15: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘data_’; did you mean ‘data’?
+  121 |     data_(ptf.data_),
+      |               ^~~~~
+      |               data
+periodicVelocityFvPatchVectorField.C:122:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘fieldData_’
+  122 |     fieldData_(ptf.fieldData_),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:122:20: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘fieldData_’
+  122 |     fieldData_(ptf.fieldData_),
+      |                    ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:123:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘timeVsData_’
+  123 |     timeVsData_(ptf.timeVsData_, false),
+      |     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:123:21: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘timeVsData_’
+  123 |     timeVsData_(ptf.timeVsData_, false),
+      |                     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:124:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘wordData_’
+  124 |     wordData_(ptf.wordData_),
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:124:19: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘wordData_’
+  124 |     wordData_(ptf.wordData_),
+      |                   ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:125:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘labelData_’
+  125 |     labelData_(-1),
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:126:5: error: class ‘Foam::periodicVelocityFvPatchVectorField’ does not have any field named ‘boolData_’
+  126 |     boolData_(ptf.boolData_)
+      |     ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C:126:19: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘boolData_’
+  126 |     boolData_(ptf.boolData_)
+      |                   ^~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In member function ‘virtual void Foam::periodicVelocityFvPatchVectorField::autoMap(const Foam::fvPatchFieldMapper&)’:
+periodicVelocityFvPatchVectorField.C:138:7: error: ‘fieldData_’ was not declared in this scope
+  138 |     m(fieldData_, fieldData_);
+      |       ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In member function ‘virtual void Foam::periodicVelocityFvPatchVectorField::rmap(const fvPatchVectorField&, const labelList&)’:
+periodicVelocityFvPatchVectorField.C:153:5: error: ‘fieldData_’ was not declared in this scope
+  153 |     fieldData_.rmap(tiptf.fieldData_, addr);
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:153:27: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘fieldData_’
+  153 |     fieldData_.rmap(tiptf.fieldData_, addr);
+      |                           ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In member function ‘virtual void Foam::periodicVelocityFvPatchVectorField::reset(const fvPatchVectorField&)’:
+periodicVelocityFvPatchVectorField.C:167:5: error: ‘fieldData_’ was not declared in this scope
+  167 |     fieldData_.reset(tiptf.fieldData_);
+      |     ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:167:28: error: ‘const class Foam::periodicVelocityFvPatchVectorField’ has no member named ‘fieldData_’
+  167 |     fieldData_.reset(tiptf.fieldData_);
+      |                            ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In member function ‘virtual void Foam::periodicVelocityFvPatchVectorField::updateCoeffs()’:
+periodicVelocityFvPatchVectorField.C:180:9: error: ‘data_’ was not declared in this scope; did you mean ‘data’?
+  180 |         data_
+      |         ^~~~~
+      |         data
+periodicVelocityFvPatchVectorField.C:181:9: error: ‘fieldData_’ was not declared in this scope
+  181 |       + fieldData_
+      |         ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:182:9: error: ‘scalarData_’ was not declared in this scope
+  182 |       + scalarData_*timeVsData_->value(t())
+      |         ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:182:21: error: ‘timeVsData_’ was not declared in this scope
+  182 |       + scalarData_*timeVsData_->value(t())
+      |                     ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C: In member function ‘virtual void Foam::periodicVelocityFvPatchVectorField::write(Foam::Ostream&) const’:
+periodicVelocityFvPatchVectorField.C:196:34: error: ‘scalarData_’ was not declared in this scope
+  196 |     writeEntry(os, "scalarData", scalarData_);
+      |                                  ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:197:28: error: ‘data_’ was not declared in this scope; did you mean ‘data’?
+  197 |     writeEntry(os, "data", data_);
+      |                            ^~~~~
+      |                            data
+periodicVelocityFvPatchVectorField.C:198:33: error: ‘fieldData_’ was not declared in this scope
+  198 |     writeEntry(os, "fieldData", fieldData_);
+      |                                 ^~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:199:20: error: ‘timeVsData_’ was not declared in this scope
+  199 |     writeEntry(os, timeVsData_());
+      |                    ^~~~~~~~~~~
+periodicVelocityFvPatchVectorField.C:200:32: error: ‘wordData_’ was not declared in this scope
+  200 |     writeEntry(os, "wordData", wordData_);
+      |                                ^~~~~~~~~
+make: *** [/opt/openfoam10/wmake/rules/General/transform:26: Make/linux64GccDPInt32Opt/periodicVelocityFvPatchVectorField.o] Error 1

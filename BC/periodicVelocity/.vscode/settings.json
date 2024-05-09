@@ -6,7 +6,14 @@
         "fvSolution": "OpenFOAM",
         "**/constant/g": "OpenFOAM",
         "**/0/*": "OpenFOAM",
+        "periodicVelocityFvPatchVectorField.C": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
         "timeDependentVelocityFvPatchVectorField.C": "cpp",
-        "periodicVelocityFvPatchVectorField.C": "cpp"
+        "fvPatchField.C": "cpp",
+        "fundamentalConstants.C": "cpp"
     }
 }

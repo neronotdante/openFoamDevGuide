@@ -44,13 +44,14 @@ int main(int argc, char *argv[])
     while(runTime.loop())
     {
         U.correctBoundaryConditions();
+
+        runTime.write();
     }
     Info<< nl << "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
         << "  ClockTime = " << runTime.elapsedClockTime() << " s"
         << nl << endl;
 
     Info<< "End\n" << endl;
-
     return 0;
 }
 
