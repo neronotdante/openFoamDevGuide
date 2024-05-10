@@ -1,10 +1,34 @@
 # openFoamDevGuide
 
-This is Hammer's openfoam development guide for anyone who is interested in openfoam.
-I'll share all my learning note(Obsidian version) source code.
+Here's my openfoam learning guide for anyone who is interested in openfoam.
+I'll share all my note and source code to you.
 
-# my enviorment
+# My Enviorment
 1. wsl2
-    a. paraview in windows
-    b. openFoam 10 
-2. Obsidian
+    a. openFoam 10 
+
+2. windows
+    a. paraview
+
+# some suggestion
+I fully recommend everyone who is going to study the openfoam framework has the basic knowdgement about
+
+1. OOP(Object-oriented programming) 
+
+2. 
+
+# update schedule
+
+## Solvers
+    1. How to use openfoam framework solve a easy patical differential equation like;
+        a. wave equation
+        b. scalar transform equation
+
+    2. `icoFoam` and `simpleFoam` source code and algorithm;
+
+    3. ...
+
+## Boundary Conditon
+    1. How to create a time and location dependent velocity boundary condition;
+
+    2. Analyze the boundary class source code.
