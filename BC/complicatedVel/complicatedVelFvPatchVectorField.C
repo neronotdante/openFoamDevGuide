@@ -48,12 +48,7 @@ complicatedVelFvPatchVectorField
 :
     fixedValueFvPatchVectorField(p, iF),
     scalarData_(0.0),
-    data_(Zero),
-    fieldData_(p.size(), Zero),
-    timeVsData_(),
-    wordData_("wordDefault"),
-    labelData_(-1),
-    boolData_(false)
+    vectorData_(Zero)
 {
 }
 
@@ -68,15 +63,11 @@ complicatedVelFvPatchVectorField
 :
     fixedValueFvPatchVectorField(p, iF),
     scalarData_(dict.lookup<scalar>("scalarData")),
-    data_(dict.lookup<vector>("data")),
-    fieldData_("fieldData", dict, p.size()),
-    timeVsData_(Function1<vector>::New("timeVsData", dict)),
-    wordData_(dict.lookupOrDefault<word>("wordName", "wordDefault")),
-    labelData_(-1),
-    boolData_(false)
+    vectorData_(dict.lookup<vector>("vectorData"))
 {
 
-
+    Foam::Info<<scalarData_<<endl;
+    Foam::Info<<vectorData_<<endl;
     fixedValueFvPatchVectorField::evaluate();
 
     /*
@@ -100,12 +91,7 @@ complicatedVelFvPatchVectorField
 :
     fixedValueFvPatchVectorField(ptf, p, iF, mapper),
     scalarData_(ptf.scalarData_),
-    data_(ptf.data_),
-    fieldData_(mapper(ptf.fieldData_)),
-    timeVsData_(ptf.timeVsData_, false),
-    wordData_(ptf.wordData_),
-    labelData_(-1),
-    boolData_(ptf.boolData_)
+    vectorData_(ptf.vectorData_)
 {}
 
 
@@ -118,12 +104,7 @@ complicatedVelFvPatchVectorField
 :
     fixedValueFvPatchVectorField(ptf, iF),
     scalarData_(ptf.scalarData_),
-    data_(ptf.data_),
-    fieldData_(ptf.fieldData_),
-    timeVsData_(ptf.timeVsData_, false),
-    wordData_(ptf.wordData_),
-    labelData_(-1),
-    boolData_(ptf.boolData_)
+    vectorData_(ptf.vectorData_)
 {}
 
 
@@ -175,12 +156,33 @@ void Foam::complicatedVelFvPatchVectorField::updateCoeffs()
         return;
     }
 
-    fixedValueFvPatchVectorField::operator==
-    (
-        data_
-      + fieldData_
-      + scalarData_*timeVsData_->value(t())
-    );
+    vectorField U = patch().Sf() * (-1);
+
+    Foam::Info<< U<< endl;
+
+    forAll(patch().Cf(),faceIndex)
+    {
+        vector patchCenter = patch().Cf()[faceIndex];
+        scalar y = patchCenter.y(); 
+        
+        vector timeDepnet = vectorData_ * t();
+        if(y < 0.5)
+        {
+            U[faceIndex] *= 0;
+            Info << U[faceIndex]<<endl;
+        }
+        else
+        {
+            U[faceIndex]  = timeDepnet;
+            Info << U[faceIndex]<<endl;
+        }
+
+    }
+
+        fixedValueFvPatchVectorField::operator==
+        (
+            U
+        );
 
 
     fixedValueFvPatchVectorField::updateCoeffs();
@@ -194,11 +196,8 @@ void Foam::complicatedVelFvPatchVectorField::write
 {
     fvPatchVectorField::write(os);
     writeEntry(os, "scalarData", scalarData_);
-    writeEntry(os, "data", data_);
+    writeEntry(os,"vectorData",vectorData_);
     writeEntry(os, "fieldData", fieldData_);
-    writeEntry(os, timeVsData_());
-    writeEntry(os, "wordData", wordData_);
-    writeEntry(os, "value", *this);
 }
 
 

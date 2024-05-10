@@ -17,7 +17,7 @@ We have already known that how to access the time by `t()` private memeber funct
 
 The patch() function is defined in `FvPatch` class. It return a `polyPatch` class.The more information about this class can be found here [OpenFOAM Official Document](https://cpp.openfoam.org/v10/classFoam_1_1fvPatch.html).
 
-There are other function in polyPatch class, like
+There are other function in`polyPatch` class, like:
 ```CPP
 
     //- Return face centres
@@ -41,3 +41,67 @@ There are other function in polyPatch class, like
     virtual tmp<vectorField> delta() const;
 ...
 ```
+Firstly, modify .C and .H file. In this boundary condition class , we only use two 
+private data 
+
+```cpp
+scalar scalarData_;
+vector vectorData_;
+```
+The boundary we are going to make is like this:
+$$ V_{loc}(x,y,z,t) = (0,0,0)\text{m/s}(y<0.5)$$
+$$ V_{loc}(x,y,z,t) = (at,0,0)\text{m/s}(y>=0.5)$$
+Convert the above euqation to code
+
+```cpp
+void Foam::complicatedVelFvPatchVectorField::updateCoeffs()
+{
+    if (updated())
+    {
+        return;
+    }
+
+    vectorField U = patch().Sf() * (-1);
+
+    Foam::Info<< U<< endl;
+
+    forAll(patch().Cf(),faceIndex)
+    {
+        vector patchCenter = patch().Cf()[faceIndex];
+        scalar y = patchCenter.y(); 
+        
+        vector timeDepnet = vectorData_ * t();
+        if(y < 0.5)
+        {
+            U[faceIndex] *= 0;
+            Info << U[faceIndex]<<endl;
+        }
+        else
+        {
+            U[faceIndex]  = timeDepnet;
+            Info << U[faceIndex]<<endl;
+        }
+
+    }
+
+        fixedValueFvPatchVectorField::operator==
+        (
+            U
+        );
+
+
+    fixedValueFvPatchVectorField::updateCoeffs();
+}
+```
+
+tip:*If we just use the `testBoundaryFoam` we have compiled. The boundary value will only changed by runTime but not mesh location in paraview. If you want to check the how the value changed where the location is different, you should run `icoFoam` instead.*
+
+compile the boundary condition class
+```bash
+wamke libso
+```
+
+Don't forget to add the libs to the `controlDict` file. And modify the 0/U file.
+
+
+
