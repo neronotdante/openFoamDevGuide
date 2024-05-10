@@ -4,20 +4,14 @@ Here's my openfoam learning guide for anyone who is interested in openfoam.
 I'll share all my note and source code to you.
 
 # My Enviorment
-1. wsl2
-    a. openFoam 10 
+wsl2
 
-2. windows
-    a. paraview
-
-# some suggestion
+# Suggestion
 I fully recommend everyone who is going to study the openfoam framework has the basic knowdgement about
 
 1. OOP(Object-oriented programming) 
 
-2. 
-
-# update schedule
+# Update Schedule
 
 ## Solvers
     1. How to use openfoam framework solve a easy patical differential equation like;
