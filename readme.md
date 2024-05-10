@@ -1,15 +1,44 @@
-# openFoamDevGuide
+# Info
+This repository is used to record the learning process of openfoam. Mainly focus on
+how a beginner use the openfoam to create a CFD case, a unique solver and a user define 
+boundary condition. This learning guide cover 3 parts:
 
-Here's my openfoam learning guide for anyone who is interested in openfoam.
-I'll share all my note and source code to you.
+## Case
+
+### 3 unit test case
+ref :https://zhuanlan.zhihu.com/p/409130279
+
+## Solver
+
+### testBoundaryFoam
+
+`testBoundaryFoam` is the first solver we are going to create. It is a simple solver that don't do any 
+calculate but just upgrate the boundary value when the time step is updated.
+
+### waveEquationFoam
+
+## BC(Boundary Condition)
+
+### timeDependentVelocity
+
+The first boundary condition only use openfoam `newFoamBC` tool. This part will tell us how to create a new boundary condition libso file and how to use it in the case.
+
+### periodicVelocity
+
+A time dependent velocity boundary condition base on the `timeDependentVelocity`. This boundary will show you how to create a sine function like periodic boundary condition.
+
+### complicatedVelocity
+
+A boundary which is time and location dependent.
 
 # My Enviorment
 wsl2
 
 # Suggestion
-I fully recommend everyone who is going to study the openfoam framework has the basic knowdgement about
+I fully recommend everyone who is going to study the openfoam has the knowdgement about
 
-1. OOP(Object-oriented programming) 
+1. OOP(Object-oriented programming);
+2. N-S equation;
 
 # Update Schedule
 
@@ -26,3 +55,5 @@ I fully recommend everyone who is going to study the openfoam framework has the 
     1. How to create a time and location dependent velocity boundary condition;
 
     2. Analyze the boundary class source code.
+
+# Reference
