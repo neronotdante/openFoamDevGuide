@@ -56,3 +56,19 @@ setFields
 waveFoam
 ```
 
+## More
+
+We have already know that `fvm::d2t2(phi)` represent $\frac{\partial \phi^2}{\partial^2t}$ What will happend when we use `fvm::ddt`? The Control euqation will change like this:
+
+$$\frac{\partial U}{\partial t} = C \nabla^2 U$$
+
+where U is not a good symbol for scalar so we change it to $T$:
+
+$$\frac{\partial T}{\partial t} = C \nabla^2 T$$
+
+Tips: We have change the PDE type, so do not forget to change the unit of C in .H file and physicalPropertries File.
+
+The formula above is a scalar transport equation without source term and conviction term. 
+
+Compile it run it and paraview it in the testCase folder.
+

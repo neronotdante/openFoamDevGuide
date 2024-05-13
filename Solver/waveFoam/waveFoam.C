@@ -44,10 +44,16 @@ int main(int argc, char *argv[])
     
     while(runTime.loop())
     {
+  //      fvScalarMatrix uEqn
+  //      (
+  //          fvm::d2dt2(U)
+  //          == fvm::laplacian(sqr(C), U)
+  //      );
+
         fvScalarMatrix uEqn
         (
-            fvm::d2dt2(U)
-            == fvm::laplacian(sqr(C), U)
+            fvm::ddt(U)
+            == fvm::laplacian(C,U)
         );
 
         uEqn.solve();

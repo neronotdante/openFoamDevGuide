@@ -35,7 +35,8 @@ Info<< "C\n" << endl;
 dimensionedScalar C
 (
     "C",
-    dimensionSet(0, 1,-1,0,0),
+    // dimensionSet(0, 1,-1,0,0,0,0),
+    dimensionSet(0, 2,-1,0,0,0,0),
     physicalProperties.lookup("C")
 );
 
