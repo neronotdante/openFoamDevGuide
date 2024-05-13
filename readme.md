@@ -16,12 +16,18 @@ calculate but just upgrate the boundary value when the time step is updated.
 
 ### waveEquationFoam
 
-This part introduces how to solve a wave equation PDE. where the control function:
+This part introduces how to solve a wave equation PDE. where the control euqation:
 
 
 $$\frac{\partial^2u}{\partial t^2} = c^2 \nabla^2 u$$
 
-## BC(Boundary Condition)
+$u$ : wave's amplitude
+
+$c$ : wave's speed
+
+$t$ : time
+
+## Boundary Condition 
 
 ### timeDependentVelocity
 
@@ -37,33 +43,36 @@ A boundary which is time and location dependent.
 
 # My Enviorment
 
-1.linux(wsl2)
-2.openfoam10
+1.openfoam10
 
 # Suggestion
 I fully recommend everyone who is going to study the openfoam has the knowdgement about
 
 1. OOP(Object-oriented programming);
 2. N-S equation;
+3. ....
 
 # Update Schedule
 
 ## Solvers
-    1. How to use openfoam framework solve a easy patical differential equation like;
-        a. wave equation
-        b. scalar transform equation
+1. How to use openfoam framework solve a easy patical differential equation like;
+    a. wave equation
+    b. scalar transform equation
 
-    2. `icoFoam` and `simpleFoam` source code and algorithm;
+2. `icoFoam` and `simpleFoam` source code and algorithm;
 
-    3. ...
+3. ...
 
 ## Boundary Conditon
-    1. How to create a time and location dependent velocity boundary condition;
+1. How to create a time and location dependent velocity boundary condition;
 
-    2. Analyze the boundary class source code.
+2. Analyze the boundary class source code.
+
+## Openfoam Class
+1. 
 
 # Reference
 
-1.3 unit case*ref :https://zhuanlan.zhihu.com/p/409130279*
-2. wave equation*ref https://github.com/UnnamedMoose/BasicOpenFOAMProgrammingTutorials*
+1. 3 unit case *:https://zhuanlan.zhihu.com/p/409130279*
+2. wave equation *https://github.com/UnnamedMoose/BasicOpenFOAMProgrammingTutorials*
 3. CFD algorithm and CFD infomation *http://dyfluid.com/*
