@@ -74,7 +74,6 @@ int main(int argc, char *argv[])
         // took to solve the equation
         Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s" << endl;
     }
-
     Info << nl << "End." << endl;
 
     return 0;
