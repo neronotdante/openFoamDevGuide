@@ -14,7 +14,7 @@ boundary condition. This learning guide cover 3 parts:
 `testBoundaryFoam` is the first solver we are going to create. It is a simple solver that don't do any 
 calculate but just upgrate the boundary value when the time step is updated.
 
-### waveEquationFoam
+### waveFoam
 
 This part introduces how to solve a wave equation PDE. where the control euqation:
 
@@ -76,3 +76,5 @@ I fully recommend everyone who is going to study the openfoam has the knowdgemen
 1. 3 unit case *:https://zhuanlan.zhihu.com/p/409130279*
 2. wave equation *https://github.com/UnnamedMoose/BasicOpenFOAMProgrammingTutorials*
 3. CFD algorithm and CFD infomation *http://dyfluid.com/*
+4. openfoam wiki *https://openfoamwiki.net/index.php/Main_Page*
+5. openFOAM source code *https://openfoam.org/release/10/*

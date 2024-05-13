@@ -1,8 +1,0 @@
-#!/bin/bash
-echo "Creating blockMesh.."
-blockMesh > log.blockMesh
-echo "Running setFields to initial amplitude field values.."
-setFields > log.setFields
-echo "Running solver.."
-ofTutorial13
-echo "Done."

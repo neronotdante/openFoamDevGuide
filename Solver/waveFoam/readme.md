@@ -70,5 +70,5 @@ Tips: We have change the PDE type, so do not forget to change the unit of C in .
 
 The formula above is a scalar transport equation without source term and conviction term. 
 
-Compile it run it and paraview it in the testCase folder.
+Compile it, run it and paraview it, in the testCase folder.
 
