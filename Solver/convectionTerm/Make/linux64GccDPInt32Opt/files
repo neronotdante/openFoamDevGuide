@@ -1,3 +1,0 @@
-SOURCE += convectionTerm.C
-
-EXE = $(FOAM_USER_APPBIN)/convectionTerm
