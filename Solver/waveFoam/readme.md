@@ -58,7 +58,7 @@ waveFoam
 
 ## More
 
-We have already know that `fvm::d2t2(phi)` represent $\frac{\partial \phi^2}{\partial^2t}$ What will happend when we use `fvm::ddt`? The Control euqation will change like this:
+We have already know that `fvm::d2t2(phi)` represent for $\frac{\partial \phi^2}{\partial^2t}$ What will happend when we use `fvm::ddt`? The Control euqation will change like this:
 
 $$\frac{\partial U}{\partial t} = C \nabla^2 U$$
 
